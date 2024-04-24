@@ -1,9 +1,8 @@
-
 $main-color: rgb(52, 108, 52);
 
-.container2{
+.container2 {
   min-height: 100vh;
-  background-color: #f4f4f4;  
+  background-color: #f4f4f4;
 }
 
 header {
@@ -12,26 +11,28 @@ header {
   text-align: left;
   padding: 1em;
 
-  h1{
+  h1 {
     font-family: 'Protest Revolution'
   }
 }
-.container{
-  
+
+.container {
+
   display: flex;
   padding-bottom: 200px;
 
-  .left-div{
+  .left-div {
     width: 70%;
     padding-top: 50px;
-    .games-container{
+
+    .games-container {
       width: 80%;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
       gap: 30px;
-  
-      .game{
+
+      .game {
         display: flex;
         height: 150px;
         box-shadow: 2px 2px 10px black;
@@ -39,65 +40,66 @@ header {
         border-radius: 8px;
         overflow: hidden;
 
-       .img-div{
-        width: 20%;
-        overflow: hidden;
-        min-width: 150px;
+        .img-div {
+          width: 20%;
+          overflow: hidden;
+          min-width: 150px;
 
 
-        img{
-          height: 100%;
-        }
-       }
-
-       .info-div{
-        width: 60%;
-        padding: 10px 20px;
-        border-right: 1px solid #333;
-
-        h2{
-          font-family: 'Protest Revolution'
+          img {
+            height: 100%;
+          }
         }
 
-        .small-font{
-          font-size: 12px;
+        .info-div {
+          width: 60%;
+          padding: 10px 20px;
+          border-right: 1px solid #333;
+
+          h2 {
+            font-family: 'Protest Revolution'
+          }
+
+          .small-font {
+            font-size: 13px;
+          }
         }
-       }
-       .price-and-buttons-div{
-        width: 20%;
-        min-width: 150px;
-        padding: 10px 20px;
-        position: relative;
-       }
-      }  
+
+        .price-and-buttons-div {
+          width: 20%;
+          min-width: 150px;
+          padding: 10px 20px;
+          position: relative;
+        }
+      }
     }
   }
 
-  .right-div{
+  .right-div {
     width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    button{
+    button {
       background-color: $main-color;
       border: none;
       padding: 8px 12px;
-      color:white;
-      cursor:pointer;
+      color: white;
+      cursor: pointer;
     }
 
-    button:hover{
+    button:hover {
       background-color: rgb(35, 156, 19);
     }
-  } 
+  }
 }
 
 .quantity-control {
   display: flex;
   align-items: center;
-  
+
 
   button {
     padding: 5px 10px;
@@ -113,22 +115,22 @@ header {
   }
 }
 
-.trash-div{
-  color:whitesmoke;
-  position:absolute;
+.trash-div {
+  color: whitesmoke;
+  position: absolute;
   right: 10px;
-  bottom: 10px;  
+  bottom: 10px;
   transition: 0.5s;
 
-  fa-icon{
-    color:indianred;
+  fa-icon {
+    color: indianred;
     font-size: 20px;
     padding: 10px;
   }
 }
 
-.trash-div:hover{
-  scale:1.5;
+.trash-div:hover {
+  scale: 1.5;
   transition: 0.5s;
 }
 
@@ -153,4 +155,3 @@ header {
     display: none;
   }
 }
-

@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 $main-color: rgb(52, 108, 52);
 
@@ -8,14 +10,14 @@ $main-color: rgb(52, 108, 52);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Caveat', cursive;
-  // font-family: 'Protest Revolution';  
-
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 a {
   text-decoration: none;
+  // font-family: "Roboto Condensed", sans-serif;
 }
+
 
 
 
