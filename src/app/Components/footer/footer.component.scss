@@ -1,0 +1,86 @@
+$main-color: rgb(52, 108, 52);
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  height: 300px;
+}
+
+.upper-div{
+  display: flex;
+  justify-content: space-between;
+  height: 80%;
+  width: 80%;
+  margin: 0 auto;
+  .trustpilot-div{
+    // background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.aHref-div{
+  ul {
+    padding: 20px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+   
+
+    li:hover{
+      color:$main-color;
+      cursor :pointer;
+    }
+
+    fa-icon{
+      color:$main-color;
+      font-size: 20px;
+    }
+  }
+}
+
+.lower-div{
+  height: 20%;
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.right-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.store-div{
+  display: flex;
+  gap: 20px;
+  // background-color: indianred;
+
+  img{
+    height: 70px;
+    width: 200px;
+    border-radius: 10px;
+    padding: 10px;
+    transition: 0.5s;
+  }
+
+  img:hover{
+    // opacity: 0.3;    
+    transition: 0.5s;
+    filter: brightness(160%);
+    background-color: #181818;
+    // background-color: $main-color;
+
+
+    cursor:pointer
+  }
+}

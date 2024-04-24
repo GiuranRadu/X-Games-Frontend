@@ -1,0 +1,27 @@
+<!-- * Search Bar Component -->
+<div class="search-bar-div">
+
+  <form [formGroup]="searchForm">
+    <input type="text" placeholder="Search ..." formControlName="searchInput" (keyup)="onKeyUp()" name="searchInput">
+  </form>
+  <div *ngIf="searchText && games.length > 0">
+    <div class="search-bar-games-div">
+      <div *ngFor="let game of games |filter : searchText">
+        <div class="game" (click)="goToGame(game)">
+          <div class="image-div">
+            <img [src]="'../../../assets/Game Pictures/' + game.name + '.jpg'" alt="poza">
+          </div>
+          <div class="info-div">
+            <p>{{game.name}}</p>
+            <p class="small-font">{{game.price}}€</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="searchText && games.length===0">
+    <p>nimic</p>
+  </div>
+
+</div>
+<!-- * Search Bar Component -->

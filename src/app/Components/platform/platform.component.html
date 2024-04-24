@@ -1,0 +1,35 @@
+<!-- <button (click)="test()">TEST</button> -->
+
+<div class="container">
+
+  <div class="{{platform}} platform-header">
+    <img [src]="'../../../assets/Platform Logo/' + platform + '.png'" alt="">
+  </div>
+
+
+
+  <div class="container2">
+
+    <div class="left-div">
+      <div class="game" *ngFor="let game of games">
+        <div class="image-div" (click)="goToGame(game)">
+          <img [src]="'../../../assets/Game Pictures/' + game.name + '.jpg'" alt="poza">
+        </div>
+        <div class="info-div {{platform}}">
+          <p>{{game.name}}</p>
+          <p class="price-tag" *ngIf="!game.discount">{{game.price}}€</p>
+          <p class="price-tag discount" *ngIf="game.discount">{{game.price - game.price * (game.discount /100) }}€ <span>(-{{game.discount}}%)</span></p>
+          <fa-icon [icon]="faCartPlus" (click)="addToCart(game)"></fa-icon>          
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="right-div" style="background-image: url('../../../assets/Controller/{{platform}}.png');"></div>
+
+  </div>
+
+
+
+</div>
+

@@ -1,0 +1,42 @@
+<!-- <button (click)="test()">TEST</button> -->
+
+<div class="big-container">
+
+  <header>
+    <h1>Games Library</h1>
+    <div class="what-to-show">
+      <h1>Show :</h1>
+      <mat-form-field [formGroup]="typeForm">
+        <mat-label>All</mat-label>
+        <mat-select formControlName="type" (selectionChange)="test()">
+          <mat-option>All</mat-option>
+          <mat-option *ngFor="let type of gameType" [value]="type">{{type}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </header>
+
+
+  <div class="container">
+    <div *ngIf="games.length === 0" class="no-games-message">
+      <p>No games found. Try exploring a different category!</p>
+    </div>
+    <div class="game" *ngFor="let game of games" [ngClass]="{'outOfStock': !game.stock}">
+      <div class="image-div" (click)="goToGame(game)">
+        <img [src]="'../../../assets/Game Pictures/' + game.name + '.jpg'" alt="poza">
+      </div>
+
+      <div class="info-div">
+        <p>{{game.name}}</p>
+        <p class="price-tag" *ngIf="!game.discount">{{game.price}}€</p>
+        <p class="price-tag discount" *ngIf="game.discount">{{game.price - game.price * (game.discount /100) }}€
+          <span>(-{{game.discount}}%)</span>
+        </p>
+        <fa-icon [icon]="faCartPlus" (click)="addToCart(game)" *ngIf="game.stock"></fa-icon>
+        <p *ngIf="!game.stock">Out Of Stock</p>
+      </div>
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="left-div">
+
+    <div class="info">
+      <h1>YOU CAN FIND US HERE <fa-icon [icon]="faMapLocation"></fa-icon></h1>
+      <p *ngIf="markerPosition">Address: {{address}}</p>
+    </div>
+
+    <google-map height="450px" width="100%" [center]="center" [zoom]="zoom" (mapClick)="saveAddress($event)">
+      <map-marker *ngIf="markerPosition" [position]="markerPosition" [options]="markerOptions"></map-marker>
+      <!-- <span class="removeMarker" (click)="removeMarker()">Remove<fa-icon [icon]="faMapLocation"></fa-icon></span> -->
+    </google-map>
+
+  </div>
+  <div class="right-div">
+    <h1>Stay in contact</h1>
+    <p>Stay updated on the latest news, events, and behind-the-scenes stories by following us on social media. Join our
+      online community and be a part of the conversation: </p>
+    <p>**Facebook:** [Your Facebook Page](https://www.facebook.com/yourpage)</p>
+    <p>**Twitter:** [Your Twitter Profile](https://twitter.com/yourhandle)</p>
+    <p>**Instagram:** [Your Instagram Profile](https://www.instagram.com/yourhandle) </p>
+
+    <h1>Our Office</h1>
+    <p>If you're in the neighborhood, we'd love to meet you in person! Our doors are always open, and we look forward to
+      welcoming you:
+    </p>
+
+    <img src="../../../assets/Random Pictures/controller3.png" alt="">
+
+  </div>
+</div>

@@ -1,0 +1,79 @@
+<!-- <button (click)="test()">TEST</button> -->
+
+<div class="container">
+  <div class="first-div">
+    <h2> Order Details </h2>
+    <fa-icon [icon]="icon"></fa-icon>
+  </div>
+
+  <div class="second-div">
+    <div class="title-div">
+      <span>1</span><h2> Select Payment option</h2>
+    </div>
+    <form class="form-div" (change)="onOptionSelected()">
+      <div #div1>
+        <label for="option1">Card</label>
+        <input type="radio" id="option1" name="options" value="card" #option1 >
+      </div>
+
+      <div #div2>
+        <label for="option2">Cash</label>
+        <input type="radio" id="option2" name="options" value="cash" #option2>
+      </div>
+
+      <div #div3>
+        <label for="option3">Bank Transfer</label>
+        <input type="radio" id="option3" name="options" value="bankTransfer" #option3>
+      </div>
+    </form>
+    <div *ngIf="cardSelected" >
+      <form [formGroup]="cardForm" class="card-div">
+        <label for="creditCard">Credit Card Number:</label>
+        <input type="text" id="creditCard" name="creditCard" formControlName="creditCard">
+        <img src="../../../assets/Small Pictures/Screenshot 2024-02-14 034043.png" alt="">
+      </form>
+    </div>
+  </div>
+
+
+
+  <div class="third-div">
+    <div class="title-div">
+      <span>2</span><h2> Complete your delivery address:</h2>
+    </div>
+    <div class="second-container">
+      <div class="info">
+        <p>Name: {{loggedUser.name}}</p>
+      </div>
+      <div class="info">
+        <p>Email: {{loggedUser.email}}</p>
+      </div>
+      <div class="address-div info">
+        <p>Address:</p>
+        <div>
+          <label for="adress"></label>
+          <input type="text" #adress>
+        </div>        
+      </div>     
+    </div>
+  </div>
+
+
+
+  <div class="order-summary">
+    <div class="title-div">
+      <span>3</span><h2> Order summary</h2>
+    </div>
+    <div class="info-div">
+      
+        <div>
+          <p>Total products : {{cartGames.length}}</p>
+          <p>Total Price:  {{totalPrice()}}€</p>
+        </div>
+        <button (click)="sendOrder()">Send Order</button>
+     
+    </div>
+  </div>
+
+
+</div>

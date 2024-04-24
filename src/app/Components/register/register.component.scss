@@ -1,0 +1,79 @@
+.container {
+  height: 100vh;
+  background-color: beige !important;
+  display: flex;
+  background-image: url('../../../assets/Random Pictures/manyCharacters2.png');
+  background-repeat: no-repeat;
+  background-size: cover !important;
+
+
+  .left-div {
+    width: 60%;
+    padding: 40px;
+
+    .register-form-div {
+      width: 80%;
+      padding: 0 0 50px 0;
+      margin: 0 auto;
+      background-color: rgb(246, 246, 246) ;
+      box-shadow: 4px 4px 10px rgb(251, 251, 251);
+      border-radius: 10px;
+      overflow: hidden;
+
+
+      .title-div {
+        background-color: black;
+        padding: 8px 10px;
+        color: white;
+        h2{
+          margin:0;
+          padding: 0;
+        }
+      }
+
+      .form-div {
+        padding: 20px 30px;
+
+        .input-div {
+          margin-bottom: 10px;
+
+          input[type="text"],
+          input[type="password"],
+          input[type="number"],
+          input[type="file"],
+          select {
+            width: 100%;
+            padding: 6px;
+            border-radius: 3px;
+            border: 2px solid #ccc;
+          }
+        }
+      }
+    }
+  }
+
+  .right-div {
+    width: 40%;
+  }
+}
+
+
+.button-div{
+  // background-color: beige;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.button-div button{
+  background-color: black;
+  color:white;
+  width: 60%;
+  padding: 10px 20px;
+}
+
+.button-div button:hover{
+  background-color: #ccc;
+  color:black;
+}

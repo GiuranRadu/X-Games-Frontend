@@ -1,0 +1,31 @@
+<div class="container">
+  <header>
+    <h1>My Orders</h1>
+  </header>
+
+
+  <div class="container2">
+    <table>
+      <thead>
+        <tr>
+          <th>Order</th>
+          <th>Date Created</th>
+          <th>Status</th>
+          <th>Total Price</th>
+          <th>Products</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Add your table data rows here -->
+        <tr *ngFor="let order of myOrders">
+          <td><span>#{{order._id}}</span></td>
+          <td>{{ formatCreatedAtDate(order.createdAt) }}</td>
+          <td>Received</td>
+          <td>{{order.totalPrice}}€</td>
+          <td>{{order.productsOrdered.length}}pc</td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="container2">
+
+
+  <header>
+    <h1>Cart</h1>
+  </header>
+  <!-- <button (click)="test()">TEST</button> -->
+  <div class="container" *ngIf="cartGames.length >= 1">
+    <div class="left-div">
+      <div class="games-container">
+        <div *ngFor="let game of cartGames; let i = index" class="game" #games>
+          <div class="img-div">
+            <img [src]="'../../../assets/Game Pictures/' + game.name + '.jpg'" alt="poza">
+          </div>
+          <div class="info-div">
+            <h2>{{game.name}}</h2>
+            <p class="small-font">{{game.description}}</p>
+          </div>
+          <div class="price-and-buttons-div">
+            <h4 *ngIf="!game.discount">Price: {{ game.price * game.quantity }} €</h4>
+            <h4 *ngIf="game.discount">Price: {{ (game.price - (game.price * game.discount / 100)) * game.quantity }} €</h4>
+            <!-- <h4 *ngIf="game.discount">Price: {{discountedPrice(game) }} €</h4> -->
+
+            <!-- <p>Quantity </p> -->
+            <div class="quantity-control">
+              <button (click)="decreaseQuantity(game)">-</button>
+              <span>{{game.quantity}}</span>
+              <button (click)="increaseQuantity(game)">+</button>
+            </div>
+            <div class="trash-div">
+              <fa-icon [icon]="faTrashAlt" (click)="removeGame(game, i)"></fa-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-div">
+      <h1>TOTAL PRICE {{totalPrice()}}€</h1>
+      <div>
+        <button (click)="goToPlaceOrder()">Procces to order</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="cartGames.length === 0">
+    <app-empty-cart></app-empty-cart>
+  </div>
+</div>
+
+

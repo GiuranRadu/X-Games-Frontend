@@ -1,0 +1,12 @@
+<div class="container">
+  <h1> <span class="star filled">&#9733;</span>Trustpilot</h1>
+  <div class="stars-container">
+
+    <div class="star-rating" (click)="rate(star)" *ngFor="let star of stars; let i = index">
+      <span class="star" [class.filled]="i < selectedRating">&#9733;</span>
+    </div>
+    
+  </div>
+  <p>TrustScore 4.7 | 1245 reviews</p>
+
+</div>

@@ -1,0 +1,33 @@
+.container {
+  min-height: 100vh;
+  background-color: rgb(201, 201, 201);
+  display: flex;
+
+  .left-div {
+    width: 50%;
+    padding: 50px;
+   
+  }
+
+  .right-div {
+    width: 50%;
+    padding: 50px;
+  }
+}
+
+
+
+
+fa-icon {
+  font-size: 30px;
+  color: red;
+  cursor: pointer;
+}
+
+h1 {
+  font-family: 'Protest Revolution';
+  margin: 0;
+  padding: 0;
+  font-size: 35px;
+  margin-bottom: 20px;
+}

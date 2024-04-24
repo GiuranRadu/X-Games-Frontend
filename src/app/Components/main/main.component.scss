@@ -1,0 +1,65 @@
+$main-color: rgb(52, 108, 52);
+
+.container {
+  background-color: #dddddd;
+  min-height: 100vh;
+  
+
+  header {
+    background-color: $main-color;
+    color: white;
+    text-align: left;
+    padding: 1em;
+
+    h1 {
+      font-family: 'Protest Revolution'
+    }
+  }
+
+  .presentation {
+    padding-top: 100px;
+    min-height: 90vh;
+    display: flex;
+    justify-content: space-around;  
+    position: relative;
+
+    .platform {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      height: 200px;
+      width: 200px;
+      transition: 0.7s;
+    
+      border: 6px double  black;     
+      border-radius: 100%;
+      cursor:pointer;    
+      
+    
+      img {
+        width: 100%;
+      
+      }
+    
+      &:hover {
+        transform: scale(1.8);
+        transition: 0.7s;
+        border-color: transparent;
+      }
+    }
+
+    .absolute {
+      position: absolute;
+      height: 350px;
+      // width: 500px;
+      bottom: 0;
+      right: 50%;      
+      transform: translateX(+50%);
+    }
+  
+
+  }
+}
+
+

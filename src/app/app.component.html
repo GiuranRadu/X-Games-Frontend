@@ -1,0 +1,63 @@
+<!-- <button (click)="refreshCartQuantity()">TEST</button> -->
+<!-- ! NAVBAR 1 -->
+<div *ngIf="!path.startsWith('/main')">
+  <app-header></app-header>
+  <router-outlet></router-outlet>
+</div>
+
+
+<!-- ! NAVBAR 2 -->
+<div *ngIf="path.startsWith('/main')" class="top-nav-bar">
+  <mat-toolbar class="mat-toolbar">
+    <!-- content -->
+    <div class="content-div">
+
+      <div class="logo-div">
+        <a routerLink="main"> <img src="../../../assets/xgamesLogo.png"> </a>
+      </div>
+
+
+      <div class="center-div">
+        <a routerLinkActive="active" routerLink="main/gamesLibrary">Games Library</a>
+        <a routerLinkActive="active" routerLink="main/cart">
+          <fa-icon [icon]="faCartShopping"></fa-icon>
+          <!-- <fa-icon [icon]="faCartShopping"></fa-icon> <span class="cartLength">{{cartQuantity}}</span> -->
+        </a>
+        <!-- * Search Bar Component -->
+        <app-search-bar></app-search-bar>
+        <!-- * Search Bar Component -->
+      </div>
+
+
+      <button mat-icon-button (click)="sidenav.toggle()" class="example-icon"
+        aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <!-- content -->
+  </mat-toolbar>
+
+  <!-- ! SIDE NAV -->
+  <mat-sidenav-container>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+    <mat-sidenav position="end" #sidenav [fixedInViewport]="false" [fixedTopGap]="60" mode="side">
+      <div class="aHref-div">
+        <a routerLinkActive="active" routerLink="main/gamesLibrary">Game Library<mat-icon>videogame_asset</mat-icon></a>
+        <a routerLinkActive="active" routerLink="main/cart">Cart <mat-icon>shopping_cart</mat-icon> </a>
+        <a routerLinkActive="active" routerLink="main/about">About <mat-icon>info</mat-icon> </a>
+        <a routerLinkActive="active" routerLink="main/contactUs">Contact us <mat-icon>people</mat-icon></a>
+        <a routerLinkActive="active" routerLink="main/orders">My Orders <mat-icon>bookmark_border</mat-icon></a>
+        <button (click)="logoutButton()" class="logoutButton">Logout</button>
+      </div>
+    </mat-sidenav>
+
+  </mat-sidenav-container>
+
+</div>
+
+
+<app-footer *ngIf="path.startsWith('/main')"></app-footer>

@@ -1,0 +1,45 @@
+<!-- <button (click)="test()">TEST</button> -->
+<div class="container">
+
+  <div class="big-image-div">
+    <div class="image-div">
+      <img [src]="'../../../assets/Big Game Pictures/' + game?.name + '.jpg'" alt="">
+    </div>
+    <h1>{{game?.name}}</h1>
+    <div class="platform-available">
+      <div class="platform-h2-div">
+        <h2>Platforms Available:</h2>
+      </div>
+      <div class="platform-image-div">
+        <img *ngFor="let platformLogo of game?.platform" [src]="'../../../assets/Small Pictures/' + platformLogo + '.png'" alt="">       
+      </div>
+    </div>
+  </div>
+
+  <div class="info-div">
+
+    <div class="image-div">
+      <img [src]="'../../../assets/Game Pictures/' + game?.name + '.jpg'" alt="poza">
+    </div>  
+
+    <div class="price-div">
+      <h1 *ngIf="!game?.discount">Price : {{game?.price}}€</h1>
+      <h1 *ngIf="game?.discount">Price : {{game.price - game.price * (game.discount /100) }}€ <span>(-{{game.discount}}%)</span></h1>
+
+      <h1></h1>
+      <div class="buttons-div">
+        <button class="heart" ><fa-icon [icon]="faHeart"></fa-icon></button>
+        <button class="add-to-cart" (click)="addToCart()" *ngIf="game?.stock">Add To cart</button>
+        <button class="add-to-cart" *ngIf="!game?.stock">Notify me when the product is back in stock</button>
+      </div>
+    </div>
+
+    <div class="description">
+      <h1 >About</h1>
+      <p>{{game?.description}}</p>
+      <p>Type: <span *ngFor="let type of game?.gameType">{{type}}</span></p>
+      
+    </div>
+
+  </div>
+</div>

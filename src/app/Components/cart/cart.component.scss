@@ -1,0 +1,156 @@
+
+$main-color: rgb(52, 108, 52);
+
+.container2{
+  min-height: 100vh;
+  background-color: #f4f4f4;  
+}
+
+header {
+  background-color: $main-color;
+  color: white;
+  text-align: left;
+  padding: 1em;
+
+  h1{
+    font-family: 'Protest Revolution'
+  }
+}
+.container{
+  
+  display: flex;
+  padding-bottom: 200px;
+
+  .left-div{
+    width: 70%;
+    padding-top: 50px;
+    .games-container{
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+  
+      .game{
+        display: flex;
+        height: 150px;
+        box-shadow: 2px 2px 10px black;
+        background-color: #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden;
+
+       .img-div{
+        width: 20%;
+        overflow: hidden;
+        min-width: 150px;
+
+
+        img{
+          height: 100%;
+        }
+       }
+
+       .info-div{
+        width: 60%;
+        padding: 10px 20px;
+        border-right: 1px solid #333;
+
+        h2{
+          font-family: 'Protest Revolution'
+        }
+
+        .small-font{
+          font-size: 12px;
+        }
+       }
+       .price-and-buttons-div{
+        width: 20%;
+        min-width: 150px;
+        padding: 10px 20px;
+        position: relative;
+       }
+      }  
+    }
+  }
+
+  .right-div{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    button{
+      background-color: $main-color;
+      border: none;
+      padding: 8px 12px;
+      color:white;
+      cursor:pointer;
+    }
+
+    button:hover{
+      background-color: rgb(35, 156, 19);
+    }
+  } 
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  
+
+  button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+  }
+
+  span {
+    font-size: 16px;
+    margin: 0 10px;
+  }
+}
+
+.trash-div{
+  color:whitesmoke;
+  position:absolute;
+  right: 10px;
+  bottom: 10px;  
+  transition: 0.5s;
+
+  fa-icon{
+    color:indianred;
+    font-size: 20px;
+    padding: 10px;
+  }
+}
+
+.trash-div:hover{
+  scale:1.5;
+  transition: 0.5s;
+}
+
+.destroy {
+  animation: destroy 1s ease-in-out forwards;
+}
+
+@keyframes destroy {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0);
+    display: none;
+  }
+}
+
