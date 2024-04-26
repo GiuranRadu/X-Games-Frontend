@@ -14,7 +14,6 @@ import { CartComponent } from './Components/cart/cart.component';
 import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
 import { GamesLibraryComponent } from './Components/games-library/games-library.component';
 import { HeaderComponent } from './Components/header/header.component';
-import { Header2Component } from './Components/header2/header2.component';
 import { HomeComponent } from './Components/home/home.component';
 import { LoginComponent } from './Components/login/login.component';
 import { MainComponent } from './Components/main/main.component';
@@ -50,7 +49,6 @@ import { GoogleMapsModule} from '@angular/google-maps'
     ForgotPasswordComponent,
     GamesLibraryComponent,
     HeaderComponent,
-    Header2Component,
     HomeComponent,
     LoginComponent,
     MainComponent,

@@ -6,16 +6,21 @@
   .left-div {
     width: 50%;
     padding: 50px;
-   
   }
 
   .right-div {
     width: 50%;
     padding: 50px;
+    position: relative;
+
+    img{
+      position: absolute;
+      bottom: 0;
+      left: 50%; 
+      transform: translateX(-50%); 
+    }
   }
 }
-
-
 
 
 fa-icon {
@@ -30,4 +35,51 @@ h1 {
   padding: 0;
   font-size: 35px;
   margin-bottom: 20px;
+}
+
+
+@media(max-width:1100px) {
+  .container{
+    .left-div,
+    .right-div{
+      padding: 50px 20px 0px 20px;
+    }
+
+    .left-div{
+      .info{
+        h1{
+          font-size: 22px;
+        }
+      }
+    }
+
+    .right-div{
+      img{
+        width: 40vw;
+      }
+
+      h1{
+        font-size: 22px;
+      }
+
+      p{
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media(max-width:650px) {
+  .container {
+    flex-direction: column;
+
+    .left-div,
+    .right-div{
+      width: 100%;
+    }
+
+    .right-div{
+      padding-bottom: 40vw;
+    }
+  }
 }

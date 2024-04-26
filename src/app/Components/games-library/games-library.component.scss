@@ -1,6 +1,6 @@
 $main-color: rgb(52, 108, 52);
 
-.big-container{
+.big-container {
   background-color: #f4f4f4;
   min-height: 100vh;
   padding-bottom: 100px;
@@ -13,11 +13,12 @@ $main-color: rgb(52, 108, 52);
     padding: 10px 10px 0 10px;
     align-items: center;
     gap: 100px;
-    h1{
-      font-family: 'Protest Revolution';  
+
+    h1 {
+      font-family: 'Protest Revolution';
     }
 
-    .what-to-show{
+    .what-to-show {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -25,7 +26,7 @@ $main-color: rgb(52, 108, 52);
     }
   }
 
-  .container{
+  .container {
     padding-top: 50px;
     width: 100%;
     margin: 0 auto;
@@ -38,55 +39,55 @@ $main-color: rgb(52, 108, 52);
     gap: 30px;
     justify-content: center;
 
-    .game{
+    .game {
       // background-color: beige;
       width: 400px;
       height: 250px;
       display: flex;
       flex-direction: column;
       box-shadow: 2px 2px 10px black;
-      position:relative;
+      position: relative;
       border-radius: 10px;
       cursor: pointer;
       overflow: hidden;
 
 
-      .image-div{
-        height: 80%;        
+      .image-div {
+        height: 80%;
         overflow: hidden;
         display: flex;
 
 
-        img{
-          width: 100%;    
-          object-fit: cover;          
+        img {
+          width: 100%;
+          object-fit: cover;
           object-position: 60% 20%;
         }
       }
 
-      .info-div{
+      .info-div {
         display: flex;
         height: 20%;
         justify-content: space-between;
         align-items: center;
         padding: 0 10px;
-        
 
-        .price-tag{
-          position:absolute;
-          top:8px;
-          left:8px;
+
+        .price-tag {
+          position: absolute;
+          top: 8px;
+          left: 8px;
           background-color: #e0fd05;
           // width: 50px;
           padding: 4px;
           border: 2px solid black;
         }
 
-        .discount{
+        .discount {
           background-color: #ff1e1e;
         }
 
-        span{
+        span {
           font-size: 10px;
         }
       }
@@ -94,57 +95,59 @@ $main-color: rgb(52, 108, 52);
   }
 }
 
-fa-icon{
-  color:$main-color;
-  transition: 0.5s;  
+fa-icon {
+  color: $main-color;
+  transition: 0.5s;
 }
 
-fa-icon:hover{
+fa-icon:hover {
   scale: 1.5;
   transition: 0.5s;
 }
 
 
-.game:hover .image-div img{
+.game:hover .image-div img {
   scale: 1.2;
   overflow: hidden;
   transition: 1s;
 }
 
 
-.your-custom-class{
+.your-custom-class {
   background-color: red;
 }
 
 
-p{
+p {
   margin: 0;
   padding: 0;
 }
 
 .no-games-message {
-  background-color: #f44336; /* Material Red background */
-  color: #ffffff; /* White text color */
+  background-color: #f44336;
+  /* Material Red background */
+  color: #ffffff;
+  /* White text color */
   padding: 20px;
   border-radius: 10px;
   margin-top: 20px;
   font-size: 18px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft box shadow for depth */
-
-
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Soft box shadow for depth */
   /* Animated pulse effect */
   animation: pulse 1.5s infinite;
-
   /* You can add more styles as needed */
 
   @keyframes pulse {
     0% {
       transform: scale(1);
     }
+
     50% {
       transform: scale(1.1);
     }
+
     100% {
       transform: scale(1);
     }
@@ -152,12 +155,13 @@ p{
 }
 
 
-.outOfStock{
+.outOfStock {
   filter: blur(1.5px);
   background-color: rgb(188, 188, 188);
-  .image-div{
 
-    img{
+  .image-div {
+
+    img {
       filter: grayscale(100%);
     }
   }
@@ -166,3 +170,65 @@ p{
 
 
 
+@media(max-width:600px) {
+  .big-container {
+    header {
+      justify-content: space-between;
+
+      h1 {
+        font-size: 20px;
+      }
+
+      mat-form-field {
+        width: 180px;
+
+        mat-label {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+
+@media(max-width:500px) {
+  .big-container {
+    header {
+      gap: 20px;
+
+
+      h1 {
+        font-size: 16px;
+      }
+
+      mat-form-field {
+        width: 140px;
+
+        mat-label {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .container {
+      .game {
+        width: 320px;
+        height: 200px;
+        .image-div{
+          height: 85%;
+        }
+
+
+        .info-div{
+          height: 15%;
+
+          p{
+            font-size: 10px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+
+}

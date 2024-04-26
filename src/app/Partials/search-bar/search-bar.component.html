@@ -3,6 +3,7 @@
 
   <form [formGroup]="searchForm">
     <input type="text" placeholder="Search ..." formControlName="searchInput" (keyup)="onKeyUp()" name="searchInput">
+    <button *ngIf="searchForm.get('searchInput').value" class="x-button" (click)="resetSearchInput()">✖️</button> 
   </form>
   <div *ngIf="searchText && games.length > 0">
     <div class="search-bar-games-div">
@@ -17,10 +18,7 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div *ngIf="searchText && games.length===0">
-    <p>nimic</p>
+    </div>  
   </div>
 
 </div>

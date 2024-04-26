@@ -1,10 +1,8 @@
-<!-- <button (click)="refreshCartQuantity()">TEST</button> -->
 <!-- ! NAVBAR 1 -->
 <div *ngIf="!path.startsWith('/main')">
   <app-header></app-header>
   <router-outlet></router-outlet>
 </div>
-
 
 <!-- ! NAVBAR 2 -->
 <div *ngIf="path.startsWith('/main')" class="top-nav-bar">
@@ -15,7 +13,6 @@
       <div class="logo-div">
         <a routerLink="main"> <img src="../../../assets/xgamesLogo.png"> </a>
       </div>
-
 
       <div class="center-div">
         <a routerLinkActive="active" routerLink="main/gamesLibrary">Games Library</a>
@@ -36,15 +33,16 @@
     </div>
     <!-- content -->
   </mat-toolbar>
+  <!-- <button (click)="test()">TEST</button> -->
 
   <!-- ! SIDE NAV -->
   <mat-sidenav-container>
-
     <mat-sidenav-content>
+      <!-- ! AICI PUNEM router-outlet -->
       <router-outlet></router-outlet>
     </mat-sidenav-content>
 
-    <mat-sidenav position="end" #sidenav [fixedInViewport]="false" [fixedTopGap]="60" mode="side">
+    <mat-sidenav position="end" #sidenav [fixedInViewport]="false" [fixedTopGap]="60" mode="over">
       <div class="aHref-div">
         <a routerLinkActive="active" routerLink="main/gamesLibrary">Game Library<mat-icon>videogame_asset</mat-icon></a>
         <a routerLinkActive="active" routerLink="main/cart">Cart <mat-icon>shopping_cart</mat-icon> </a>
@@ -54,7 +52,6 @@
         <button (click)="logoutButton()" class="logoutButton">Logout</button>
       </div>
     </mat-sidenav>
-
   </mat-sidenav-container>
 
 </div>

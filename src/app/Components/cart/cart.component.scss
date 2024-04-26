@@ -17,7 +17,6 @@ header {
 }
 
 .container {
-
   display: flex;
   padding-bottom: 200px;
 
@@ -27,7 +26,7 @@ header {
 
     .games-container {
       width: 80%;
-      margin: 0 auto;
+      margin-left: 50px;
       display: flex;
       flex-direction: column;
       gap: 30px;
@@ -153,5 +152,119 @@ header {
     opacity: 0;
     transform: scale(0);
     display: none;
+  }
+}
+
+
+@media(max-width:1200px) {
+  .container {
+    .left-div {
+      .games-container {
+        width: 90%;
+      }
+    }
+  }
+}
+
+
+@media(max-width:1050px) {
+  .container {
+    flex-direction: column;
+    gap: 50px;
+
+    .left-div {
+      width: 100%;
+
+      .games-container {
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+
+    .right-div {
+      width: 100%;
+    }
+  }
+}
+
+@media(max-width:850px) {
+  .container {
+    .left-div {
+      .games-container {
+        .game {
+          .info-div {
+            h2 {
+              margin: 0;
+              font-size: 15px;
+            }
+
+            .small-font {
+              font-size: 8px;
+              line-height: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media(max-width:600px) {
+  .container {
+    .left-div {
+      .games-container {
+        .game {
+
+          .img-div {
+            width: 30%;
+            min-width: 0px;
+          }
+
+          .info-div {
+            width: 50%;
+            border: none;
+            padding-right: 5px;
+
+          }
+
+          .price-and-buttons-div {
+            width: 20%;
+            min-width: 120px;
+            padding: 10px 0;
+          }
+
+        }
+      }
+    }
+  }
+}
+
+@media(max-width:500px) {
+  .container {
+    .left-div {
+      .games-container {
+        .game {
+
+          .img-div {
+            display: none;
+          }
+
+          .info-div {
+            width: 75%;
+            border: none;
+            padding-right: 5px;
+
+          }
+
+          .price-and-buttons-div {
+            width: 25%;
+            min-width: 120px;
+            padding: 12px 0;
+          }
+
+        }
+      }
+    }
   }
 }

@@ -1,12 +1,11 @@
 .container {
-  // background-color: beige;
   height: 100vh;
   // height: calc(100vh - 80px);
   display: flex;
 
   .left-div {
     width: 60%;
-    background-image: url('../../../assets/Random Pictures/manyCharacters.png');    
+    background-image: url('../../../assets/Random Pictures/manyCharacters.png');
     background-size: cover;
   }
 
@@ -14,30 +13,30 @@
     width: 40%;
     background: linear-gradient(to bottom right, #8f3db5, #ffa500);
     padding: 40px;
-    
+
 
     .register-form-div {
       width: 80%;
       margin: 0 auto;
       background-color: rgb(232, 232, 232);
-      padding: 0 0 50px 0;
+      padding: 0 0 20px 0;
       box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.615);
       border-radius: 10px;
       overflow: hidden;
 
       .title-div {
-        background-color:black;
+        background-color: black;
         padding: 8px 20px;
-        color:white;       
-        
-        h2{
-          margin:0;
+        color: white;
+
+        h2 {
+          margin: 0;
           padding: 0;
         }
       }
 
       .form-div {
-        padding: 20px 30px;
+        padding: 20px 30px 0 30px;
 
         .input-div {
           margin-bottom: 10px;
@@ -58,7 +57,7 @@
   }
 }
 
-.button-div{
+.button-div {
   // background-color: beige;
   display: flex;
   justify-content: center;
@@ -66,14 +65,104 @@
   margin-top: 50px;
 }
 
-.button-div button{
+.button-div button {
   background-color: black;
-  color:white;
+  color: white;
   width: 60%;
   padding: 10px 20px;
 }
 
-.button-div button:hover{
+.button-div button:hover {
   background-color: #ccc;
-  color:black;
+  color: black;
+}
+
+.forgot-register-div {
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.forgot-register-div>a {
+  text-decoration: none;
+  border-radius: 5px;
+  font-style: none;
+  color: black;
+  padding: 2px 8px;
+}
+
+.forgot-register-div>a:hover {
+  background-color: #c9c9c9;
+}
+
+
+@media(max-width:1200px) {
+  .container {
+
+    .left-div,
+    .right-div {
+      width: 50%;
+
+    }
+  }
+}
+
+
+@media(max-width:950px) {
+  .container {
+
+    .left-div {
+      width: 40%;
+    }
+
+    .right-div {
+      width: 60%;
+
+    }
+  }
+}
+
+
+@media(max-width:750px) {
+  .container {
+
+    .left-div {
+      display: none;
+    }
+
+    .right-div {
+      width: 100%;
+      background-image: url('../../../assets/Random Pictures/manyCharacters.png');
+      background-size: cover;
+    }
+  }
+}
+
+
+@media(max-width:500px) {
+  .container {
+    .right-div {
+      padding: 40px 0px;
+
+      .register-form-div {
+        .title-div {
+          padding: 4px 15px;
+        }      
+      }
+    }
+  }
+
+  .button-div button {
+    background-color: black;
+    color: white;
+    width: 60%;
+    padding: 6px 16px;
+  }
+
+
+  .forgot-register-div>a {
+    font-size: 12px;
+  }
+
 }

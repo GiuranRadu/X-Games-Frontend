@@ -15,7 +15,7 @@
       width: 80%;
       padding: 0 0 50px 0;
       margin: 0 auto;
-      background-color: rgb(246, 246, 246) ;
+      background-color: rgb(246, 246, 246);
       box-shadow: 4px 4px 10px rgb(251, 251, 251);
       border-radius: 10px;
       overflow: hidden;
@@ -25,8 +25,9 @@
         background-color: black;
         padding: 8px 10px;
         color: white;
-        h2{
-          margin:0;
+
+        h2 {
+          margin: 0;
           padding: 0;
         }
       }
@@ -54,11 +55,12 @@
 
   .right-div {
     width: 40%;
+    // background-color: red;
   }
 }
 
 
-.button-div{
+.button-div {
   // background-color: beige;
   display: flex;
   justify-content: center;
@@ -66,14 +68,51 @@
   margin-top: 50px;
 }
 
-.button-div button{
+.button-div button {
   background-color: black;
-  color:white;
+  color: white;
   width: 60%;
   padding: 10px 20px;
 }
 
-.button-div button:hover{
+.button-div button:hover {
   background-color: #ccc;
-  color:black;
+  color: black;
+}
+
+@media(max-width:1200px) {
+  .container {
+    .left-div {
+      width: 70%;
+    }
+
+    .right-div {
+      width: 30%;
+    }
+  }
+}
+
+
+@media(max-width:900px) {
+  .container {
+    .left-div {
+      width: 100%;
+      padding: 40px 0;
+    }
+
+    .right-div {
+      display: none;
+    }
+  }
+}
+
+
+@media(max-width:500px) {
+  .container {
+    .left-div {
+      .register-form-div {
+        width: 90%;
+      }
+    }
+  }
 }

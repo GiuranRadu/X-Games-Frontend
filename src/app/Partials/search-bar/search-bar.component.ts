@@ -30,12 +30,16 @@ export class SearchBarComponent implements OnInit {
     }, (error) => {
       console.log("error", error.error);
     })
-
-
   }
 
   onKeyUp() {
-    this.searchText = this.searchForm.value.searchInput;
+    this.searchText = this.searchForm.value.searchInput; 
+  }
+
+
+  resetSearchInput() {
+    this.searchForm.reset();
+    this.searchText = ''
   }
 
   goToGame(game: any) {

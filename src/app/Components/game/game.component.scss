@@ -14,7 +14,7 @@ $main-color: rgb(52, 108, 52);
       position: absolute;
       top: 15px;
       right: 15px;
-      font-family: 'Protest Revolution';      
+      font-family: 'Protest Revolution';
       color: white;
       font-size: 40px;
     }
@@ -27,22 +27,21 @@ $main-color: rgb(52, 108, 52);
 
       img {
         width: 100%;
-        align-self: self-start;
-        // margin-top: 250px;  
+        align-self: flex-start;
       }
     }
   }
 }
 
 .platform-available {
-  width: 350px;
-  height: 80px;
-  padding: 20px;
+  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 350px;
+  height: 80px;
+  padding: 20px;
   background-color: transparent;
-  position: absolute;
   right: 0;
   bottom: 0;
   background-color: #333333c1;
@@ -110,6 +109,7 @@ $main-color: rgb(52, 108, 52);
 
     h1 {
       margin-bottom: 5px;
+
       span {
         font-size: 12px;
       }
@@ -117,11 +117,9 @@ $main-color: rgb(52, 108, 52);
 
     .buttons-div {
       display: flex;
-      // background-color: red;
       width: 100%;
       gap: 10px;
       justify-content: center;
-      // justify-content: space-around;
 
       button {
         background-color: $main-color;
@@ -156,7 +154,6 @@ $main-color: rgb(52, 108, 52);
   .image-div {
     width: 400px;
     height: 260px;
-
     position: absolute;
     top: -180px;
     left: 10%;
@@ -175,4 +172,135 @@ $main-color: rgb(52, 108, 52);
     padding: 0;
   }
 
+}
+
+
+@media(max-width:1000px) {
+  .info-div {
+    .image-div {
+      width: 320px;
+      height: 180px;
+      top: -90px
+    }
+  }
+}
+
+
+@media(max-width:750px) {
+  .info-div {
+    .image-div {
+      display: none;
+    }
+
+    .description {
+      padding: 20px 0;
+    }
+  }
+
+  .container {
+    .big-image-div {
+      height: fit-content;
+      height: 300px;
+
+      h1 {
+        font-size: 20px;
+      }
+
+      .image-div{
+        img{
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width:550px) {
+  .container {
+    .big-image-div {
+      height: fit-content;
+      height: 300px;
+
+      h1 {
+        font-size: 20px;
+      }
+
+      .image-div{
+        img{
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .platform-available {
+    width: 250px;
+    height: 60px;
+   
+
+    .platform-h2-div {
+      width: 30%;
+
+      h2 {
+        font-size: 15px;
+        line-height: 18px;
+      }
+    }
+
+    .platform-image-div {
+      width: 70%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      img {
+        width: 30px;
+      }
+    }
+  }
+
+  .info-div {
+    padding-top: 40px;
+    flex-direction: column;
+
+    .image-div {
+      display: none;
+    }
+
+    .description {
+      padding: 0;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+      padding: 0 40px;
+
+      p{
+        font-size: 10px;
+        text-align: left;
+      }
+    }
+
+    .price-div {
+      padding-top: 0;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 100%;
+
+      .buttons-div {
+        // flex-direction: column;
+
+        .heart {
+          width: 40px;
+          height: 40px;
+          padding: 0;
+        }
+
+        .add-to-cart {
+          width: 80%;
+        }
+      }
+    }
+  }
 }

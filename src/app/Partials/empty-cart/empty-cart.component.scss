@@ -19,7 +19,7 @@ $main-color: rgb(52, 108, 52);
   height: auto;
 }
 
-h1{
+h1 {
   font-family: inherit;
 }
 
@@ -28,13 +28,27 @@ p {
   color: #333;
 }
 
-a{
+a {
   background-color: $main-color;
-  color:white;
+  color: white;
   padding: 4px 12px;
   border-radius: 4px;
 }
 
-a:hover{
+a:hover {
   background-color: green
+}
+
+
+@media(max-width:500px) {
+  h1 {
+    margin-bottom: 100px;
+  }
+
+
+  a {
+
+    padding: 8px 20px;
+
+  }
 }

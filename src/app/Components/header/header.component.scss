@@ -4,7 +4,7 @@
   background-color: black;
   align-items: center;
   padding: 0px 50px;
-  height: 80px; 
+  height: 80px;
   width: 100%;
 
   .left-div {
@@ -19,7 +19,6 @@
     height: 100%;
   }
 
-
   .aHref-div {
     display: flex;
     justify-content: space-between;
@@ -27,6 +26,8 @@
     width: 250px;
     height: 100%;
     align-items: center;
+
+
   }
 
   .aHref-div a {
@@ -34,6 +35,7 @@
     padding: 10px;
     width: 100px;
     text-align: center;
+    border-radius: 2px;
   }
 
   .aHref-div a:hover {
@@ -45,6 +47,35 @@
     background-color: green;
     color: white;
   }
+}
 
 
+@media(max-width:850px) {
+  .header-div {
+    .aHref-div {
+      width: 180px;
+
+      a {
+        padding: 5px 8px;
+        width: 80px;
+
+      }
+    }
+  }
+}
+
+@media(max-width:500px) {
+  .header-div {
+    padding: 0px 20px;
+    .aHref-div {
+      width: 160px;
+
+      a {
+        padding: 3px 6px;
+        width: 70px;
+        font-size: 12px;
+
+      }
+    }
+  }
 }

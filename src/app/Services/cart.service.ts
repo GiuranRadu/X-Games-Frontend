@@ -115,6 +115,4 @@ export class CartService {
     localStorage.removeItem('cartData');
   }
 
-
-
 }

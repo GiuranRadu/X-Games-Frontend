@@ -1,6 +1,6 @@
 $main-color: rgb(52, 108, 52);
 
-.container{
+.container {
   min-height: 100vh;
 
   header {
@@ -15,29 +15,52 @@ $main-color: rgb(52, 108, 52);
   }
 }
 
-.container2{
+.container2 {
   width: 70%;
-  margin:70px auto;    
- 
+  margin: 70px auto;
+
   table {
     border-collapse: collapse;
     width: 100%;
     margin-top: 20px;
   }
-  th, td {
+
+  th,
+  td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
   }
+
   th {
-    background-color:  $main-color;
-    color:white;
+    background-color: $main-color;
+    color: white;
   }
 
 
-  span{
+  span {
     font-size: 10px;
     font-weight: bold;
-    color:$main-color;
+    color: $main-color;
   }
+}
+
+
+@media(max-width:620px) {
+  .container2 {
+    width: 90%;
+  }
+}
+
+@media(max-width:485px) {
+  .container2 {
+    width: 90%;
+    overflow-x: scroll;
+    
+    table{
+      font-size: 10px;
+    }
+  }
+
+
 }

@@ -27,8 +27,6 @@ export class PlaceOrderComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
-
-
   constructor(private CartService: CartService, private OrdersService: OrdersService, private cookies: CookieService, private snackBar: MatSnackBar, private router: Router) { }
 
   ngOnInit(): void {
@@ -110,11 +108,11 @@ export class PlaceOrderComponent implements OnInit {
         };
         //! If payment method is `card`, create a condition to check if card number is completed
         if (this.paymentMethod === "card" && this.cardForm.value.creditCard) {
-          this.OrdersService.createOrder(this.loggedUser._id, order, this.token).subscribe(() => {            
+          this.OrdersService.createOrder(this.loggedUser._id, order, this.token).subscribe(() => {
             this.succesMessage()
           });
         } else if (this.paymentMethod !== "card") {
-          this.OrdersService.createOrder(this.loggedUser._id, order, this.token).subscribe(() => {           
+          this.OrdersService.createOrder(this.loggedUser._id, order, this.token).subscribe(() => {
             this.succesMessage()
           });
         } else {
@@ -139,20 +137,20 @@ export class PlaceOrderComponent implements OnInit {
 
   cannotPlaceOrder() {
     let message: any;
-    if(!this.isOptionSelected){
+    if (!this.isOptionSelected) {
       message = "Please select a payment method"
     }
-    if(this.isOptionSelected && this.adress.nativeElement.value && !this.cardForm.value.creditCard){
+    if (this.isOptionSelected && this.adress.nativeElement.value && !this.cardForm.value.creditCard) {
       message = "Please complete card number"
     }
-    if(this.isOptionSelected && !this.adress.nativeElement.value){
+    if (this.isOptionSelected && !this.adress.nativeElement.value) {
       message = "Please enter your adress"
     }
-    if (this.cartGames.length === 0){
+    if (this.cartGames.length === 0) {
       message = "Cart is empty"
     }
     this.snackBar.open(`${message}❌`, 'Close', {
-      duration: 2000, 
+      duration: 2000,
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,
     });
@@ -161,7 +159,7 @@ export class PlaceOrderComponent implements OnInit {
 
   sum: number = 0;
   totalPrice(): number {
-    this.sum = this.cartGames.reduce((acc, game) => acc + (game.price * game.quantity), 0);
+    this.sum = this.cartGames.reduce((acc, game) => acc + ((game.discountedPrice ? game.discountedPrice : game.price) * game.quantity), 0);
     return this.sum;
   }
 

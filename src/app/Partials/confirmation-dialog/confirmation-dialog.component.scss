@@ -1,6 +1,6 @@
 $main-color: rgb(52, 108, 52);
 
-body{
+body {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,45 +12,65 @@ body{
   backdrop-filter: blur(10px);
   height: 100vh;
   width: 100vw;
-
 }
 
 
-.confirm-dialog-div{
+.confirm-dialog-div {
   // background-color: whitesmoke;
   background-color: #333;
-  color:white;
+  color: white;
   width: 400px;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.8);
 
-  h1{
-    color:white;
+  h1 {
+    color: white;
   }
 
-  p{
-    color:white;
+  p {
+    color: white;
   }
 }
 
-.buttons-div{
+.buttons-div {
   display: flex;
   justify-content: space-around;
   margin-bottom: 20px;
 }
 
-.buttons-div button{
+.buttons-div button {
   width: 150px;
   padding: 10px 20px;
 }
 
-.yes-button{
+.yes-button {
   background-color: $main-color;
   border: none;
-  color:whitesmoke
+  color: whitesmoke
 }
 
-.yes-button:hover{
+.yes-button:hover {
   background-color: green
+}
+
+
+@media(max-width:500px) {
+  .confirm-dialog-div {
+    width: 300px;
+    padding: 5px 12px;
+    h1 {
+      font-size: 18px;
+    }
+  
+    p {
+      font-size: 12px;
+    }
+
+    .buttons-div button {
+      width: 100px;
+      padding: 8px 16px;
+    }
+    
+  }
 }
