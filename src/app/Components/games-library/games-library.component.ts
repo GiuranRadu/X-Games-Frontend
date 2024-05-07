@@ -77,7 +77,6 @@ export class GamesLibraryComponent implements OnInit {
   }
 
   addToFavorites(game: any): void {
-    console.log(game);
     this.FavoriteService.addToFavorites(game)
   }
 

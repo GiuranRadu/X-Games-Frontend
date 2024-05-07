@@ -12,16 +12,7 @@ export class AuthService {
 
 
   constructor(private http: HttpClient) { }
-
-  //* Send token by header
-  private createHeader(token: any) {
-    let headers = new HttpHeaders();
-    if (token) {
-      headers = headers.set('Authorization', 'bearer ' + token)
-    }
-    return headers
-  }
-
+ 
   register(user: any): Observable<any> {
     return this.http.post(this.APIUrl + '/register', user)
   }

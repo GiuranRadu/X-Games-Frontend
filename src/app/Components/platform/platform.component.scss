@@ -94,6 +94,12 @@
       // background-color: #107c10;
       color: white;
 
+      .fa-icons-div{
+        display: flex;
+        width: 50px;
+        justify-content: space-between;
+      }
+
 
       .price-tag {
         position: absolute;

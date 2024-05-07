@@ -18,9 +18,12 @@
         <div class="info-div {{platform}}">
           <p>{{game.name}}</p>
           <p class="price-tag" *ngIf="!game.discount">{{game.price}}€</p>
-          <p class="price-tag discount" *ngIf="game.discount">{{game.price - game.price * (game.discount /100) }}€ <span>(-{{game.discount}}%)</span></p>
-          <fa-icon [icon]="faCartPlus" (click)="addToCart(game)"></fa-icon>          
-          
+          <p class="price-tag discount" *ngIf="game.discount">{{game.price - game.price * (game.discount /100) }}€
+            <span>(-{{game.discount}}%)</span></p>
+          <div class="fa-icons-div">
+            <fa-icon [icon]="faCartPlus" (click)="addToCart(game)"></fa-icon>
+            <fa-icon [icon]="faHeart" (click)="addToFavorites(game)"></fa-icon>
+          </div>
         </div>
       </div>
     </div>
@@ -32,4 +35,3 @@
 
 
 </div>
-
