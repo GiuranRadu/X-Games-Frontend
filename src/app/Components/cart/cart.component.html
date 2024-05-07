@@ -1,10 +1,7 @@
 <div class="container2">
-
-
   <header>
     <h1>Cart</h1>
   </header>
-  <!-- <button (click)="test()">TEST</button> -->
   <div class="container" *ngIf="cartGames.length >= 1">
     <div class="left-div">
       <div class="games-container">
@@ -18,10 +15,9 @@
           </div>
           <div class="price-and-buttons-div">
             <h4 *ngIf="!game.discount">Price: {{ game.price * game.quantity }} €</h4>
-            <h4 *ngIf="game.discount">Price: {{ (game.price - (game.price * game.discount / 100)) * game.quantity }} €</h4>
-            <!-- <h4 *ngIf="game.discount">Price: {{discountedPrice(game) }} €</h4> -->
+            <h4 *ngIf="game.discount">Price: {{ (game.price - (game.price * game.discount / 100)) * game.quantity }} €
+            </h4>
 
-            <!-- <p>Quantity </p> -->
             <div class="quantity-control">
               <button (click)="decreaseQuantity(game)">-</button>
               <span>{{game.quantity}}</span>
@@ -47,5 +43,3 @@
     <app-empty-cart></app-empty-cart>
   </div>
 </div>
-
-

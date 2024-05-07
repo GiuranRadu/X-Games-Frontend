@@ -54,6 +54,11 @@ $main-color: rgb(52, 108, 52);
       justify-content: center;
       align-items: center;
       text-align: center;
+      position: relative;
+      
+      .fa-icon{
+        font-size: 22px;
+      }
 
       .cartLength {
         color: white;
@@ -61,10 +66,14 @@ $main-color: rgb(52, 108, 52);
         width: 22px;
         height: 22px;
         border-radius: 15px;
-        font-size: 14px;
+        font-size: 13px;
+        font-weight: bold;
         display: flex;
         justify-content: center;
         align-items: center;
+        position: absolute;
+        top: -8px;
+        right: -17px
       }
     }
   }
@@ -83,7 +92,7 @@ $main-color: rgb(52, 108, 52);
   justify-content: space-between;
   align-items: flex-start;
   gap: 30px;
-  padding: 20px; 
+  padding: 20px;
 
 
   a {
@@ -98,8 +107,6 @@ $main-color: rgb(52, 108, 52);
     color: $main-color;
     transform: scale(1.1);
   }
-
-
 }
 
 .active {
@@ -140,6 +147,7 @@ $main-color: rgb(52, 108, 52);
       }
     }
   }
+
   .mat-sidenav {
     width: 250px;
   }

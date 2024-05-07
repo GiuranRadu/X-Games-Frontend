@@ -14,6 +14,7 @@ import { PlatformComponent } from './Components/platform/platform.component';
 import { OrdersComponent } from './Components/orders/orders.component';
 import { ContactComponent } from './Components/contact/contact.component';
 import { AboutComponent } from './Components/about/about.component';
+import { FavoritesComponent } from './Components/favorites/favorites.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path: 'main/orders', component: OrdersComponent},
   {path: 'main/contactUs', component: ContactComponent},
   {path: 'main/about', component: AboutComponent},
+  {path: 'main/favorites', component: FavoritesComponent},
 ];
 
 @NgModule({

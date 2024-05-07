@@ -1,51 +1,47 @@
-<!-- ! NAVBAR 1 -->
+<!-- ! NAVBAR 1 + Content (if not logged in) -->
 <div *ngIf="!path.startsWith('/main')">
   <app-header></app-header>
   <router-outlet></router-outlet>
 </div>
 
-<!-- ! NAVBAR 2 -->
+<!-- ! NAVBAR 2 + Content (if logged in) -->
 <div *ngIf="path.startsWith('/main')" class="top-nav-bar">
   <mat-toolbar class="mat-toolbar">
-    <!-- content -->
+    <!-- navbar content -->
     <div class="content-div">
-
       <div class="logo-div">
         <a routerLink="main"> <img src="../../../assets/xgamesLogo.png"> </a>
       </div>
-
       <div class="center-div">
         <a routerLinkActive="active" routerLink="main/gamesLibrary">Games Library</a>
-        <a routerLinkActive="active" routerLink="main/cart">
-          <fa-icon [icon]="faCartShopping"></fa-icon>
-          <!-- <fa-icon [icon]="faCartShopping"></fa-icon> <span class="cartLength">{{cartQuantity}}</span> -->
+        <a routerLink="main/cart">
+          <fa-icon [icon]="faCartShopping" class="fa-icon"></fa-icon> <span class="cartLength">{{cartQuantity}}</span>
+        </a>
+        <a routerLink="main/favorites">
+          <fa-icon [icon]="faHeart" class="fa-icon"></fa-icon>  <span class="cartLength">{{favouriteQuantity}}</span>
         </a>
         <!-- * Search Bar Component -->
         <app-search-bar></app-search-bar>
         <!-- * Search Bar Component -->
       </div>
-
-
       <button mat-icon-button (click)="sidenav.toggle()" class="example-icon"
         aria-label="Example icon-button with menu icon">
         <mat-icon>menu</mat-icon>
       </button>
     </div>
-    <!-- content -->
+    <!-- navbar content -->
   </mat-toolbar>
-  <!-- <button (click)="test()">TEST</button> -->
 
-  <!-- ! SIDE NAV -->
+  <!-- ! router-outlet(left) + SIDE NAV(right)  -->
   <mat-sidenav-container>
     <mat-sidenav-content>
-      <!-- ! AICI PUNEM router-outlet -->
       <router-outlet></router-outlet>
     </mat-sidenav-content>
-
     <mat-sidenav position="end" #sidenav [fixedInViewport]="false" [fixedTopGap]="60" mode="over">
       <div class="aHref-div">
         <a routerLinkActive="active" routerLink="main/gamesLibrary">Game Library<mat-icon>videogame_asset</mat-icon></a>
         <a routerLinkActive="active" routerLink="main/cart">Cart <mat-icon>shopping_cart</mat-icon> </a>
+        <a routerLinkActive="active" routerLink="main/favorites">Favorites <mat-icon>favorite</mat-icon></a>
         <a routerLinkActive="active" routerLink="main/about">About <mat-icon>info</mat-icon> </a>
         <a routerLinkActive="active" routerLink="main/contactUs">Contact us <mat-icon>people</mat-icon></a>
         <a routerLinkActive="active" routerLink="main/orders">My Orders <mat-icon>bookmark_border</mat-icon></a>
@@ -53,7 +49,6 @@
       </div>
     </mat-sidenav>
   </mat-sidenav-container>
-
 </div>
 
 

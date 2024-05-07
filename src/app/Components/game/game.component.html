@@ -28,7 +28,7 @@
 
       <h1></h1>
       <div class="buttons-div">
-        <button class="heart" ><fa-icon [icon]="faHeart"></fa-icon></button>
+        <button class="heart" (click)="addToFavorites(game)"><fa-icon [icon]="faHeart"></fa-icon></button>
         <button class="add-to-cart" (click)="addToCart()" *ngIf="game?.stock">Add To cart</button>
         <button class="add-to-cart" *ngIf="!game?.stock">Notify me when the product is back in stock</button>
       </div>

@@ -4,6 +4,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { GamesService } from 'src/app/Services/games.service';
 import { faHeart} from '@fortawesome/free-solid-svg-icons';
 import { CartService } from 'src/app/Services/cart.service';
+import { FavoritesService } from 'src/app/Services/favorites.service';
 
 
 
@@ -20,7 +21,7 @@ export class GameComponent implements OnInit {
   token: any;
   faHeart = faHeart
 
-  constructor(private route: ActivatedRoute, private GS: GamesService,private cookies: CookieService,private CartService: CartService){}
+  constructor(private route: ActivatedRoute, private GS: GamesService,private cookies: CookieService,private CartService: CartService, private FavoriteService : FavoritesService){}
 
   ngOnInit(): void {
     this.token = this.cookies.get("token");
@@ -43,6 +44,11 @@ export class GameComponent implements OnInit {
 
   test(){
     console.log(this.game.gameType);
+  }
+
+  addToFavorites(game:any){
+    console.log(game);
+    this.FavoriteService.addToFavorites(game)
   }
 
 }

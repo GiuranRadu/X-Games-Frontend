@@ -18,7 +18,6 @@ export class CartComponent implements OnInit {
   faTrashAlt = faTrashAlt;
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
-
   
 
   constructor(private CartService: CartService, private router: Router, private snackBar: MatSnackBar) { }
@@ -34,7 +33,7 @@ export class CartComponent implements OnInit {
     this.CartService.increaseQuantity(game._id)
     this.refreshProducts();
     this.snackBar.open(`Quantity ➕ `, 'Close', {
-      duration: 3000, // Time in milliseconds
+      duration: 3000, 
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,
     });
@@ -50,7 +49,7 @@ export class CartComponent implements OnInit {
       this.CartService.decreaseQuantity(game._id)
       this.refreshProducts()
       this.snackBar.open(`Quantity ➖`, 'Close', {
-        duration: 3000, // Time in milliseconds
+        duration: 3000, 
         horizontalPosition: this.horizontalPosition,
         verticalPosition: this.verticalPosition,
       });
@@ -78,7 +77,6 @@ export class CartComponent implements OnInit {
   refreshProducts() {
     this.cartGames = this.CartService.getCart();
   }
-
 
   sum: number = 0;
   totalPrice(): number {

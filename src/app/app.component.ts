@@ -4,8 +4,11 @@ import { CookieService } from 'ngx-cookie-service';
 import { ConfirmationDialogComponent } from './Partials/confirmation-dialog/confirmation-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { CartService } from 'src/app/Services/cart.service';
+import { FavoritesService } from './Services/favorites.service';
 
 
 
@@ -20,10 +23,17 @@ export class AppComponent implements OnInit {
   path: string = '';
   faCartPlus = faCartPlus
   faCartShopping = faCartShopping;
+  faHeart = faHeart;
   cartQuantity = 0;
+  favouriteQuantity = 0;
 
-  constructor(private CartService: CartService, private router: Router, private cookieService: CookieService, public dialog: MatDialog) {      
-
+  constructor(private CartService: CartService, private router: Router, private cookieService: CookieService, public dialog: MatDialog, private FavoriteService: FavoritesService) {      
+    FavoriteService.getFavoritesObservable().subscribe((x)=>{
+      this.favouriteQuantity = x.length;
+    })
+    CartService.getCartDataObservable().subscribe((x)=>{
+      this.cartQuantity = x.length;
+    });
   }
   
   ngOnInit(): void {
@@ -60,7 +70,5 @@ export class AppComponent implements OnInit {
         }, 2000)
       }
     })
-
   }
-
 }

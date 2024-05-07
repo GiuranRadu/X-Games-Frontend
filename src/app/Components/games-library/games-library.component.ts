@@ -3,9 +3,11 @@ import { CookieService } from 'ngx-cookie-service';
 import { GamesService } from 'src/app/Services/games.service';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { CartService } from 'src/app/Services/cart.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FavoritesService } from 'src/app/Services/favorites.service';
 
 
 
@@ -16,12 +18,13 @@ import { Router } from '@angular/router';
 })
 export class GamesLibraryComponent implements OnInit {
 
-  constructor(private GS: GamesService, private cookies: CookieService, private CartService: CartService, private router: Router) { }
+  constructor(private GS: GamesService, private cookies: CookieService, private CartService: CartService, private router: Router, private FavoriteService : FavoritesService) { }
 
   games: any[] = []
   token: any;
   faCartPlus = faCartPlus
   faTrash = faTrash
+  faHeart = faHeart
   existingCartData = JSON.parse(localStorage.getItem('cartData')) || [];
   gameType = ["RPG", "Racing", "Shooter", "Action", "Sports", "Adventure", "Simulation", "Fighting", "Strategy", "Battle Royale", "Retro"];
 
@@ -44,23 +47,22 @@ export class GamesLibraryComponent implements OnInit {
 
   }
 
-  test() {    
+  filterGames() {
     let value = this.typeForm.value.type
-    if(value){
-      this.GS.getGamesByValue("gameType",value ,this.token).subscribe((result) => {
+    if (value) {
+      this.GS.getGamesByValue("gameType", value, this.token).subscribe((result) => {
         this.games = result.data.games
-  
+
       }, (error) => {
         console.log("error", error.error);
       })
-    }else{
+    } else {
       this.GS.getAllGames(this.token).subscribe((result) => {
         this.games = result.data.games
       }, (error) => {
         console.log("error", error.error);
       })
     }
-    
   }
 
 
@@ -70,8 +72,14 @@ export class GamesLibraryComponent implements OnInit {
 
   goToGame(game: any) {
     this.router.navigate(['/main/gamesLibrary', game._id]).then(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to the top of the page
-    });  }
+      window.scrollTo({ top: 0, behavior: 'smooth' }); 
+    });
+  }
+
+  addToFavorites(game: any): void {
+    console.log(game);
+    this.FavoriteService.addToFavorites(game)
+  }
 
 
 

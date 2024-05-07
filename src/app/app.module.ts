@@ -39,7 +39,8 @@ import { OrdersComponent } from './Components/orders/orders.component';
 import { ContactComponent } from './Components/contact/contact.component';
 import { DatePipe } from '@angular/common';
 import { AboutComponent } from './Components/about/about.component';
-import { GoogleMapsModule} from '@angular/google-maps'
+import { GoogleMapsModule} from '@angular/google-maps';
+import { FavoritesComponent } from './Components/favorites/favorites.component'
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import { GoogleMapsModule} from '@angular/google-maps'
     PlatformComponent,
     OrdersComponent,
     ContactComponent,
-    AboutComponent
+    AboutComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,
